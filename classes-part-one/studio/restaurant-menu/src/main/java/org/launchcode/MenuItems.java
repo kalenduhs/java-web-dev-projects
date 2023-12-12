@@ -1,6 +1,8 @@
 package org.launchcode;
 
 public class MenuItems {
+
+    private String name;
     private double price;
 
     private String description;
@@ -9,11 +11,28 @@ public class MenuItems {
 
     private boolean isNew;
 
-    public MenuItems(double price, String description, String category, boolean isNew) {
+    public MenuItems(String name, double price, String description, String category, boolean isNew) {
+        this.name = name;
         this.price = price;
         this.description = description;
         this.category = category;
         this.isNew = isNew;
+    }
+
+    //Instance Method for Menu Item is New
+
+    //Need a toString Method
+
+
+    @Override
+    public String toString() {
+        return
+                "name='" + name + '\'' +
+                ", price=" + price +
+                ", description='" + description + '\'' +
+                ", category='" + category + '\'' +
+                ", isNew=" + isNew + '\n'
+                ;
     }
 
     public double getPrice() {
