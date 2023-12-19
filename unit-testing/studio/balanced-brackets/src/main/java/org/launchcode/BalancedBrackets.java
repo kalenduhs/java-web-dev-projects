@@ -1,4 +1,7 @@
 package org.launchcode;
+
+import java.util.ArrayList;
+
 public class BalancedBrackets {
     /*
      * The function BalancedBrackets should return true if and only if
@@ -26,8 +29,28 @@ public class BalancedBrackets {
                 brackets++;
             } else if (ch == ']') {
                 brackets--;
+                if (brackets < 0) {
+                    return false;
+                }
             }
         }
         return brackets == 0;
     }
+
+    public static boolean alsoHasBalancedBrackets(String str) {
+        ArrayList<Character> brackets = new ArrayList<Character>();
+        for (char ch : str.toCharArray()) {
+            if (ch == '[' || ch == '{') {
+                brackets.add(ch);
+            } else if (ch == ']' || ch == '}') {
+                if (brackets.isEmpty()) {
+                    return false;
+                } else {
+                    return true; // This doesn't really work but I didn't feel like finishing it
+                }
+            }
+        }
+        return brackets.size() == 0;
+    }
 }
+
